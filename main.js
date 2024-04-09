@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth,window.innerHeight)
 
 camera.position.setZ(30)
 
-const planetTexture = new THREE.TextureLoader().load("/planet.jpg")
+const planetTexture = new THREE.TextureLoader().load("/planet.png")
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(10 , 30,30,100),
   new THREE.MeshStandardMaterial({
@@ -42,8 +42,8 @@ const controls = new OrbitControls(camera,renderer.domElement)
 function animate(){
   requestAnimationFrame(animate);
 
-  sphere.rotation.y +=0.01
-  sphere.rotation.x +=0.005
+  sphere.rotation.y +=0.005
+  sphere.rotation.x +=0.002
   controls.update()
   renderer.render(scene,camera);
 }
